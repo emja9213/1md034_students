@@ -3,9 +3,12 @@
 	font-size: 1.2em;
 } 
 
-.menu {
-    color: #000000;
+#menu {
+	background-color: #000000;
+	color: white;
 }
+
+#delivery {}
 
 .allergens {
     font-weight: bold;
