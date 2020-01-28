@@ -21,6 +21,15 @@ table {
 	margin: 0 auto;
 }
 
+section {
+	margin: 0px;
+	padding: 20px;
+}
+
+button {
+	margin-top: 1cm;
+}
+
 button:hover {
 	cursor: pointer;
 }
