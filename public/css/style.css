@@ -13,4 +13,8 @@
 .allergens {
     font-weight: bold;
 }
-     
+
+
+button:hover {
+	cursor: pointer;
+}
