@@ -22,9 +22,10 @@ table {
 }
 
 section {
-	margin: 0px;
+	margin: 20px;
 	padding: 20px;
 	border: dashed;
+	border-radius: 5%;
 }
 
 button {
@@ -33,4 +34,18 @@ button {
 
 button:hover {
 	cursor: pointer;
+}
+
+#header {
+	color: orange;
+	text-align: center;
+	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;
+	margin-left: 20px;
+}
+
+#header_image {
+	width: 100%;
+	max-height: 8cm;
+	opacity: 0.9;
 }
