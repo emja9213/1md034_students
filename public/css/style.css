@@ -6,7 +6,7 @@
 
 #menu {
 	background-color: #000000;
-	color: white;
+	color: orange;
 }
 
 #delivery {}
@@ -24,6 +24,7 @@ table {
 section {
 	margin: 0px;
 	padding: 20px;
+	border: dashed;
 }
 
 button {
