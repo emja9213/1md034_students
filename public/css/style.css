@@ -26,6 +26,7 @@ section {
 	padding: 20px;
 	border: dashed;
 	border-radius: 5%;
+	overflow: hidden;
 }
 
 button {
@@ -37,15 +38,23 @@ button:hover {
 }
 
 #header {
-	color: orange;
-	text-align: center;
-	-webkit-text-stroke-color: black;
-	-webkit-text-stroke-width: 1px;
+	height: auto;
+	padding: 1px;
+	overflow: hidden;
 	margin-left: 20px;
 }
 
+#header_text {
+	color: rgb(206, 65, 65);
+	text-shadow: 3px 3px black;
+	position: absolute;
+	z-index: 1;
+}
+
+
 #header_image {
 	width: 100%;
-	max-height: 8cm;
-	opacity: 0.9;
+	padding-top: 1cm;
+	height: auto;
+	opacity: 90%;
 }
