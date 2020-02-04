@@ -4,8 +4,8 @@ function menuItem(name, gluten, lactose, kCal, imagePath) {
 	this.lactose = lactose;
 	this.kCal = kCal;
 	this.imagePath = imagePath;
-	
-	this.getName = function (){
+
+	this.getName = function () {
 		return this.name;
 	}
 	this.getkCal = function () {
@@ -23,8 +23,12 @@ let delifreshPlantBeef = new menuItem("Delifresh Plant Beef", true, true, 870, "
 
 let smokeyChipotlePlantBeef = new menuItem("Smokey Chipotle Plant Beef", true, true, 920, "https://www.max.se/contentassets/32f727872e644cf1803605d39bacd581/product_gdl-smokey-chipotle-plant-beef.jpg");
 
-console.log(crispyNoChicken.getName());
-console.log(bbqSandwich.getName());
-console.log(crispyNuggets.getName());
-console.log(delifreshPlantBeef.getName());
-console.log(smokeyChipotlePlantBeef.getName());
+document.getElementById("p1").innerHTML = crispyNoChicken.name;
+
+document.getElementById("p2").innerHTML = bbqSandwich.name;
+
+document.getElementById("p3").innerHTML = crispyNuggets.name;
+
+document.getElementById("p4").innerHTML = delifreshPlantBeef.name;
+
+document.getElementById("p5").innerHTML = smokeyChipotlePlantBeef.name;
