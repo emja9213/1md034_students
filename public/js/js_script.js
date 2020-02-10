@@ -1,4 +1,3 @@
-
 function menuItem(name, gluten, lactose, kCal, imagePath) {
 	this.name = name;
 	this.gluten = gluten;
@@ -24,10 +23,12 @@ let delifreshPlantBeef = new menuItem("Delifresh Plant Beef", true, true, 870, "
 
 let smokeyChipotlePlantBeef = new menuItem("Smokey Chipotle Plant Beef", true, true, 920, "https://www.max.se/contentassets/32f727872e644cf1803605d39bacd581/product_gdl-smokey-chipotle-plant-beef.jpg");
 
+/*
 var h = document.createElement("H1");
 var t = document.createTextNode("Välj en burgare.");
 h.appendChild(t);
 document.body.appendChild(h);
+*/
 
 let menu = [crispyNoChicken, bbqSandwich, crispyNuggets, delifreshPlantBeef, smokeyChipotlePlantBeef];
 
@@ -36,6 +37,11 @@ for (var i = 0; i < menu.length; i++) {
 
 	let paragraph = document.createElement("P");
 
+	let image = document.createElement("IMG");
+	image.setAttribute("src", burger.imagePath);
+	image.setAttribute("width", "200");
+	paragraph.appendChild(image);
+		
 	let list = document.createElement("ul");
 
 	let name = document.createTextNode(burger.name);
@@ -43,7 +49,7 @@ for (var i = 0; i < menu.length; i++) {
 	h3.appendChild(name);
 	list.appendChild(h3);
 
-	let kCal = document.createTextNode(burger.kCal);
+	let kCal = document.createTextNode(burger.kCal + " kCal");
 	let listItem1 = document.createElement("li");
 	listItem1.appendChild(kCal);
 	list.appendChild(listItem1);
@@ -60,7 +66,6 @@ for (var i = 0; i < menu.length; i++) {
 		listItem3.appendChild(lactose);
 		list.appendChild(listItem3);
 	}
-
 	paragraph.appendChild(list);
-	document.body.appendChild(paragraph);
+	document.getElementById("menuGrid").appendChild(paragraph);
 }
