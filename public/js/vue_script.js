@@ -23,13 +23,15 @@ let delifreshPlantBeef = new menuItem("Delifresh Plant Beef", true, true, 870, "
 
 let smokeyChipotlePlantBeef = new menuItem("Smokey Chipotle Plant Beef", true, true, 920, "https://www.max.se/contentassets/32f727872e644cf1803605d39bacd581/product_gdl-smokey-chipotle-plant-beef.jpg");
 
-const vm = new Vue({
-	el: '#myID',
+new Vue({
+	el: "#app",
 	data: {
-		menuItem1: crispyNoChicken.name,
-		menuItem2: bbqSandwich.name,
-		menuItem3: crispyNuggets.name,
-		menuItem4: delifreshPlantBeef.name,
-		menuItem5: smokeyChipotlePlantBeef.name
+		menu: [
+			{ name: crispyNoChicken.name, kCal: crispyNoChicken.kCal, gluten: crispyNoChicken.gluten, lactose: crispyNoChicken.lactose },
+			{ name: bbqSandwich.name, kCal: bbqSandwich.kCal, gluten: bbqSandwich.gluten, lactose: bbqSandwich.lactose },
+			{ name: crispyNuggets.name, kCal: crispyNuggets.kCal, gluten: 		crispyNuggets.gluten, lactose: crispyNuggets.lactose },
+			{ name: delifreshPlantBeef.name, kCal: delifreshPlantBeef.kCal, gluten: delifreshPlantBeef.gluten, lactose: delifreshPlantBeef.lactose },
+			{ name: smokeyChipotlePlantBeef.name, kCal: smokeyChipotlePlantBeef.kCal, gluten: smokeyChipotlePlantBeef.gluten, lactose: smokeyChipotlePlantBeef.lactose }
+		]
 	}
 })

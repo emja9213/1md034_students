@@ -1,3 +1,4 @@
+
 function menuItem(name, gluten, lactose, kCal, imagePath) {
 	this.name = name;
 	this.gluten = gluten;
@@ -23,12 +24,43 @@ let delifreshPlantBeef = new menuItem("Delifresh Plant Beef", true, true, 870, "
 
 let smokeyChipotlePlantBeef = new menuItem("Smokey Chipotle Plant Beef", true, true, 920, "https://www.max.se/contentassets/32f727872e644cf1803605d39bacd581/product_gdl-smokey-chipotle-plant-beef.jpg");
 
-document.getElementById("p1").innerHTML = crispyNoChicken.name;
+var h = document.createElement("H1");
+var t = document.createTextNode("Välj en burgare.");
+h.appendChild(t);
+document.body.appendChild(h);
 
-document.getElementById("p2").innerHTML = bbqSandwich.name;
+let menu = [crispyNoChicken, bbqSandwich, crispyNuggets, delifreshPlantBeef, smokeyChipotlePlantBeef];
 
-document.getElementById("p3").innerHTML = crispyNuggets.name;
+for (var i = 0; i < menu.length; i++) {
+	let burger = menu[i];
 
-document.getElementById("p4").innerHTML = delifreshPlantBeef.name;
+	let paragraph = document.createElement("P");
 
-document.getElementById("p5").innerHTML = smokeyChipotlePlantBeef.name;
+	let list = document.createElement("ul");
+
+	let name = document.createTextNode(burger.name);
+	let h3 = document.createElement("h3");
+	h3.appendChild(name);
+	list.appendChild(h3);
+
+	let kCal = document.createTextNode(burger.kCal);
+	let listItem1 = document.createElement("li");
+	listItem1.appendChild(kCal);
+	list.appendChild(listItem1);
+
+	if (burger.gluten == true) {
+		let listItem2 = document.createElement("li");
+		let gluten = document.createTextNode("Contains gluten");
+		listItem2.appendChild(gluten);
+		list.appendChild(listItem2);
+	}
+	if (burger.lactose == true) {
+		let listItem3 = document.createElement("li");
+		let lactose = document.createTextNode("Contains lactose");
+		listItem3.appendChild(lactose);
+		list.appendChild(listItem3);
+	}
+
+	paragraph.appendChild(list);
+	document.body.appendChild(paragraph);
+}
