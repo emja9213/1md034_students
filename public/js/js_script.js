@@ -1,4 +1,4 @@
-function menuItem(name, gluten, lactose, kCal, imagePath) {
+/*function menuItem(name, gluten, lactose, kCal, imagePath) {
 	this.name = name;
 	this.gluten = gluten;
 	this.lactose = lactose;
@@ -23,14 +23,8 @@ let delifreshPlantBeef = new menuItem("Delifresh Plant Beef", true, true, 870, "
 
 let smokeyChipotlePlantBeef = new menuItem("Smokey Chipotle Plant Beef", true, true, 920, "https://www.max.se/contentassets/32f727872e644cf1803605d39bacd581/product_gdl-smokey-chipotle-plant-beef.jpg");
 
-/*
-var h = document.createElement("H1");
-var t = document.createTextNode("Välj en burgare.");
-h.appendChild(t);
-document.body.appendChild(h);
-*/
-
 let menu = [crispyNoChicken, bbqSandwich, crispyNuggets, delifreshPlantBeef, smokeyChipotlePlantBeef];
+
 
 for (var i = 0; i < menu.length; i++) {
 	let burger = menu[i];
@@ -68,4 +62,4 @@ for (var i = 0; i < menu.length; i++) {
 	}
 	paragraph.appendChild(list);
 	document.getElementById("menuGrid").appendChild(paragraph);
-}
+}*/

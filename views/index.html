@@ -15,10 +15,25 @@
             <h1 id="header_text">Welcome to </h1>
             <img id="header_image" src="https://i.imgur.com/Ky4N6xe.png">  
         </figure>
-        <section id="menu">
+        <section id="menuSection">
             <h3>Menu</h3>
             <p>Select what to order here.</p>
-            <div id="menuGrid" class="wrapper"> <!--
+            <div id="menuGrid" class="wrapper">
+                <div v-for="burger in menu">
+                    <h3> {{ burger.name }} </h3></br>
+                    <img v-bind:src="burger.imagePath" width="200">
+                    <ul>
+                        <li>{{ burger.kCal }} kCal</li>
+                        <li v-if="burger.gluten">
+                            Contains gluten
+                        </li>
+                        <li v-if="burger.lactose">
+                            Contains lactose
+                        </li>
+                    </ul>  
+                </div>
+                
+                <!--
                 <div class="crispy_no_chicken">
                     <h3>Crispy No Chicken™</h3>
                     <img src="https://www.max.se/contentassets/ff1439a7a1624cf4a6b068c37d0db25f/product_crispy-no-chicken2.jpg" alt="Crispy No Chicken" title="Nice" width="200"> 
