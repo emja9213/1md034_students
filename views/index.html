@@ -33,81 +33,55 @@
                         </li>
                     </ul>  
                 </div>
-                
-                <!--
-                <div class="crispy_no_chicken">
-                    <h3>Crispy No Chicken™</h3>
-                    <img src="https://www.max.se/contentassets/ff1439a7a1624cf4a6b068c37d0db25f/product_crispy-no-chicken2.jpg" alt="Crispy No Chicken" title="Nice" width="200"> 
-                    <ul>
-                        <li>Contains <span class="allergens" id="gluten">gluten</span> &check;</li>
-                        <li>Greta Thunberg Approved &check;</li>
-                        <li>No lactose tho &#128064; &check;</li>
-                        <li>600 kCal &check;</li>
-                    </ul>
-                </div>
-                <div class="bbq_sandwich">
-                    <h3>BBQ Sandwich™</h3>
-                    <img src="https://www.max.se/contentassets/10aac66bde484d38bbf6e8b37c0e6e36/product_bbq-sandwich2.jpg" alt="BBQ Sandwich" title="Nice" width="200">
-                    <ul>
-                        <li>Contains <span class="allergens" id="gluten">gluten</span> &check;</li>
-                        <li>Greta Thunberg Approved &check;</li>
-                        <li>No lactose tho &#128064; &check;</li>
-                        <li>440 kCal &check;</li>
-                    </ul>
-                </div>
-                <div class="crispy_nuggets">
-                    <h3>Crispy Nuggets™</h3>
-                    <img src="https://www.max.se/contentassets/8c0ab650367341b988b9de30c99769f3/product_crispy-nuggets.jpg" alt="Crispy Nuggets" title="Nice" width="200">
-                    <ul>
-                        <li>Very Good &check;</li>
-                        <li>Greta Thunberg Approved &check;</li>
-                        <li>No lactose or gluten! &#128064; &check;</li>
-                        <li>470 kCal &check;</li>
-                    </ul>
-                </div>-->
             </div>
         </section>
 
-        <section id="delivery">
-            <form>
-            <h3>Customer Information</h3>
-            <p>Enter payment and delivery information here.</p>
-            <h4>Delivery Information</h4>
+        
+            <section>
+                <form>
+                <div id="delivery"></div>
+                <h3>Customer Information</h3>
+                <p>Enter payment and delivery information here.</p>
+                <h4>Delivery Information</h4>
+                    <p>
+                        <label for="fullname">Full name</label><br>
+                        <input v-model="fullname" type="text" id="fullname" name="fn" required="required" placeholder="First- and last name" />
+                    </p>
+                    <p>
+                        <label for="email">E-mail</label><br>
+                        <input v-model="email" type="email" id="email" name="email" required="required" placeholder="E-mail address" />
+                    </p>
+                    <p>
+                        <label for="street">Street</label><br>
+                        <input v-model="streetname" type="text" id="street" name="streetname" placeholder="Street name" />
+                    </p>
+                    <p>
+                        <label for="house"+>House</label><br>
+                        <input v-model="housenumber" type="number" id="house" name="housenumber" placeholder="House number" />
+                    </p>
+                    <p>
+                        <label for="payment">Payment options</label><br />
+                        <select id="payment" name="Payment option" v-model="payment">
+                            <option selected="selected">Credit Card</option>
+                            <option>Swish</option>
+                            <option>Cash</option>
+                            <option>Gift Card</option>
+                        </select>
+                    </p>
+                    <p id="submitSection">
+                        <label for="gender">Gender</label><br>
+                        <input type="radio" id="gender" name="gender" value="male" v-model="gender">Male<br>
+                        <input type="radio" name="gender" value="female" v-model="gender">Female<br>
+                        <input type="radio" name="gender" value="non-binary" v-model="gender">Non-Binary<br>
+                        <input type="radio" name="gender" value="undisclosed" checked="checked" v-model="gender">Undisclosed<br>
+                    </p>
+                </form>
+                <button v-on:click="markDone()" id="placeOrderButton" type="submit">Place Order <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.T3DuF5MEIheJRiWBYnZhrAHaHa%26pid%3DApi&f=1" width="25"/></button>
                 <p>
-                    <label for="fullname">Full name</label><br>
-                    <input type="text" id="fullname" name="fn" required="required" placeholder="First- and last name" />
+                    {{order}}
                 </p>
-                <p>
-                    <label for="email">E-mail</label><br>
-                    <input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
-                </p>
-                <p>
-                    <label for="street">Street</label><br>
-                    <input type="text" id="street" name="sn" placeholder="Street name" />
-                </p>
-                <p>
-                    <label for="house"+>House</label><br>
-                    <input type="number" id="house" name="hn" placeholder="House number" />
-                </p>
-                <p>
-                    <label for="payment">Payment options</label><br />
-                    <select id="payment" name="Payment option">
-                        <option selected="selected">Credit Card</option>
-                        <option>Swish</option>
-                        <option>Cash</option>
-                        <option>Gift Card</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="gender">Gender</label><br>
-                    <input type="radio" id="gender" name="gender" value="male"> Male<br>
-                    <input type="radio" name="gender" value="female"> Female<br>
-                    <input type="radio" name="gender" value="non-binary"> Non-Binary<br>
-                    <input type="radio" name="gender" value="undisclosed" checked="checked"> Undisclosed<br>
-                </p>
-            </form>
-            <button type="submit" value="send">Place Order <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.T3DuF5MEIheJRiWBYnZhrAHaHa%26pid%3DApi&f=1" width="25"/></button>
-        </section>
+                </div>
+            </section>
     </main>
     <footer><hr></hr>Copyright&copy;™ Herr™ Jansson™ &™ Co™&copy;</footer>
 </body>
