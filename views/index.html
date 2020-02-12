@@ -21,7 +21,8 @@
             <p>Select what to order here.</p>
             <div id="menuGrid" class="wrapper">
                 <div v-for="burger in menu">
-                    <h3> {{ burger.name }} </h3></br>
+                    <input type="checkbox" id="burger" :value="burger.name" v-model="selectedBurgers">
+                    <h3><label for="burger"> {{ burger.name }} </label></h3></br>
                     <img v-bind:src="burger.imagePath" width="200">
                     <ul>
                         <li>{{ burger.kCal }} kCal</li>
@@ -39,7 +40,7 @@
         
             <section>
                 <form>
-                <div id="delivery"></div>
+                <div id="delivery">
                 <h3>Customer Information</h3>
                 <p>Enter payment and delivery information here.</p>
                 <h4>Delivery Information</h4>
@@ -73,17 +74,17 @@
                         <input type="radio" id="gender" name="gender" value="male" v-model="gender">Male<br>
                         <input type="radio" name="gender" value="female" v-model="gender">Female<br>
                         <input type="radio" name="gender" value="non-binary" v-model="gender">Non-Binary<br>
-                        <input type="radio" name="gender" value="undisclosed" checked="checked" v-model="gender">Undisclosed<br>
+                        <input v-model="gender" type="radio" name="gender" value="undisclosed" checked="checked">Undisclosed<br>
                     </p>
                 </form>
-                <button v-on:click="markDone()" id="placeOrderButton" type="submit">Place Order <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.T3DuF5MEIheJRiWBYnZhrAHaHa%26pid%3DApi&f=1" width="25"/></button>
-                <p>
+                <button v-on:click="markDone()" id="placeOrderButton" type="button">Place Order <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iconexperience.com%2F_img%2Fg_collection_png%2Fstandard%2F512x512%2Fhamburger.png&f=1&nofb=1" width="25"/></button>
+                <pre>
                     {{order}}
-                </p>
+                    {{selectedBurgers}}
+                </pre>
                 </div>
             </section>
     </main>
     <footer><hr></hr>Copyright&copy;™ Herr™ Jansson™ &™ Co™&copy;</footer>
 </body>
 </html>
-          

@@ -1,4 +1,4 @@
-function submit() {
+/*function submit() {
 	var fullName = document.getElementById("fullname").value;
 	var streetName = document.getElementById("street").value;
 	var houseNumber = document.getElementById("house").value;
@@ -23,34 +23,30 @@ function submit() {
 	var array = [fullName, streetName, houseNumber, paymentOption, selectedGender];
 	return array;
 }
+*/
 
 const vueMenu = new Vue({
 	el: "#menuGrid",
 	data: {
-		menu: food
+		menu: food,
+		selectedBurgers: []
 	},
 });
 
 const vueDelivery = new Vue({
 	el: "#delivery",
 	data: {
-		fullname: "hej",
-		email: "fgsg",
-		streetname: "sfdg",
-		housenumber: "sdfg",
-		gender: "dsfg",
-		payment: "sdfg",
-		order: "sgf",
+		fullname: "",
+		email: "",
+		streetname: "",
+		housenumber: "",
+		gender: "",
+		payment: "",
+		order: "",
 	},
 	methods: {
 		markDone: function () {
-			console.log(fullname);
-			console.log(email);
-			console.log(streetname);
-			console.log(housenumber);
-			console.log(gender);
-			console.log(payment);
-			console.log(order);
+			this.order = '\n' + this.fullname + '\n' + this.email + '\n' + this.streetname + '\n' + this.housenumber + '\n' + this.gender + '\n' + this.payment + '\n' + vueMenu.selectedBurgers
 		}
 	}
 })

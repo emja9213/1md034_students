@@ -1,9 +1,9 @@
-let button = document.getElementById("placeOrderButton");
+/*let button = document.getElementById("placeOrderButton");
 
 function functionClick() {
 	console.log("Button clicked!");
 }
-/*
+
 function submit() {
 	var fullName = document.getElementById("fullname").value;
 	var streetName = document.getElementById("street").value;
