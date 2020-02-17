@@ -1,8 +1,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>      <y></y>
+<head>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/socket.io/socket.io.js" defer></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
     <script src="js/vue_script.js" defer></script>
@@ -52,6 +53,7 @@
                         <label for="email">E-mail</label><br>
                         <input v-model="email" type="email" id="email" name="email" required="required" placeholder="E-mail address" />
                     </p>
+                    <!--
                     <p>
                         <label for="street">Street</label><br>
                         <input v-model="streetname" type="text" id="street" name="streetname" placeholder="Street name" />
@@ -60,6 +62,7 @@
                         <label for="house">House</label><br>
                         <input v-model="housenumber" type="number" id="house" name="housenumber" placeholder="House number" />
                     </p>
+                    -->
                     <p>
                         <label for="payment">Payment options</label><br />
                         <select id="payment" name="Payment option" v-model="payment">
@@ -75,6 +78,15 @@
                         <input type="radio" name="gender" value="female" v-model="gender">Female<br>
                         <input type="radio" name="gender" value="non-binary" v-model="gender">Non-Binary<br>
                         <input v-model="gender" type="radio" name="gender" value="undisclosed" checked="checked">Undisclosed<br>
+                    </p>
+                    <p>
+                        <div class="view-box">
+                            <div id="dots" v-on:click="addOrder">
+                                <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                                    {{key}}
+                                </div>
+                            </div>
+                        </div>
                     </p>
                 </form>
                 <button v-on:click="markDone()" id="placeOrderButton" type="button">Place Order <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iconexperience.com%2F_img%2Fg_collection_png%2Fstandard%2F512x512%2Fhamburger.png&f=1&nofb=1" width="25"/></button>
