@@ -83,6 +83,12 @@ const vueDelivery = new Vue({
 					y: this.localOrder.details.y,
 				},
 				orderItems: vueMenu.selectedBurgers,
+				deliveryInfo: [
+					this.fullname,
+					this.email,
+					this.gender,
+					this.payment,
+				]
 			});
 		},
 		displayOrder: function (event) {
