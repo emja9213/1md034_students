@@ -41,7 +41,6 @@ const vueDelivery = new Vue({
 	data: {
 		orders: {},
 		localOrder: {
-			orderId: "T",
 			details: {
 				x: 0,
 				y: 0,
@@ -55,6 +54,7 @@ const vueDelivery = new Vue({
 		gender: "Undisclosed",
 		payment: "Credit Card",
 		order: "",
+		orderId: 0,
 	},
 	methods: {
 		markDone: function () {
@@ -65,10 +65,7 @@ const vueDelivery = new Vue({
 			/* This function returns the next available key (order number) in
 			* the orders object, it works under the assumptions that all keys
 			* are integers. */
-			let lastOrder = Object.keys(this.orders).reduce(function (last, next) {
-				return Math.max(last, next);
-			}, 0);
-			return lastOrder + 1;
+			return this.	orderId;
 		},
 		addOrder: function () {
 			/* When you click in the map, a click event object is sent as parameter
@@ -76,6 +73,8 @@ const vueDelivery = new Vue({
 			 * The click event object contains among other things different
 			 * coordinates that we need when calculating where in the map the click
 			 * actually happened. */
+
+			this.orderId += 1;
 			socket.emit('addOrder', {
 				orderId: this.getNext(),
 				details: {
